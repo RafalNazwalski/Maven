@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Lab 1</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<form th:object="${student}" method="POST" th:action="@{/firstForm}">
+		<span th:text="${formName}"></span> <input type="text"
+			name="firstName" th:value="*{firstName}" /> <input type="text"
+			name="lastName" th:value="*{lastName}" />
+		<button type="submit">Przeslij</button>
+	</form>
+</body>
+</html>
