@@ -4,7 +4,34 @@ public class Student {
 
 	private String firstName;
 	private String lastName;
+	private int age;
+	private String email;
+	private String address;
 	
+	public int getWiek() {
+		return age;
+	}
+
+	public void setWiek(int wiek) {
+		this.age = wiek;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
