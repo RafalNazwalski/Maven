@@ -13,11 +13,11 @@ import org.wwsis.lab1.model.Student;
 @Controller
 public class FirstFormController {
 
+	DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+	Date date = new Date();
+	
 	@RequestMapping("/firstForm")
 	public String getForm(Model model) {
-
-		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-		Date date = new Date();
 
 		model.addAttribute("dateTime", "Aktualna data i godzina: " + dateFormat.format(date));
 		model.addAttribute("formName", "Moj formularz:");
@@ -28,6 +28,12 @@ public class FirstFormController {
 
 	@PostMapping("/firstForm")
 	public String postForm(Model model, Student student) {
+		if(student.getAge() < 0) {
+			model.addAttribute("formName", "Moj formularz:");
+			model.addAttribute("dateTime", "Aktualna data i godzina: " + dateFormat.format(date));
+			model.addAttribute("errorMessage", "Niepoprawna wartosc w polu wiek!");
+			return "firstForm";
+		}
 		model.addAttribute("studentFirstName", student.getFirstName());
 		model.addAttribute("studentLastName", student.getLastName());
 		model.addAttribute("studentAge", student.getAge());

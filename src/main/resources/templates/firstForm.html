@@ -5,12 +5,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <style type="text/css">
     .container {
-        width: 180px;
+        width: 250px;
         clear: both;
     }
     .container input {
-        width: 100%;
+        width: 90%;
         clear: both;
+    }
+    .error{
+    	color:red;
     }
     </style>
 </head>
@@ -32,6 +35,11 @@
 	</form>
 	<br/>
 	<b><span th:text="${dateTime}"></span></b>
+	<br />
+	</div>
+	<div class="error">
+		<br />
+		<b><span th:text="${errorMessage}"></span></b>
 	</div>
 </body>
 </html>
