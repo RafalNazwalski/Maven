@@ -8,11 +8,11 @@ public class Student {
 	private String email;
 	private String address;
 	
-	public int getWiek() {
+	public int getAge() {
 		return age;
 	}
 
-	public void setWiek(int wiek) {
+	public void setAge(int wiek) {
 		this.age = wiek;
 	}
 

@@ -20,7 +20,7 @@ public class FirstFormController {
 		Date date = new Date();
 
 		model.addAttribute("dateTime", "Aktualna data i godzina: " + dateFormat.format(date));
-		model.addAttribute("formName", "Moj formularz");
+		model.addAttribute("formName", "Moj formularz:");
 		model.addAttribute("student", new Student());
 
 		return "firstForm";
@@ -30,7 +30,9 @@ public class FirstFormController {
 	public String postForm(Model model, Student student) {
 		model.addAttribute("studentFirstName", student.getFirstName());
 		model.addAttribute("studentLastName", student.getLastName());
-		model.addAttribute(arg0)
+		model.addAttribute("studentAge", student.getAge());
+		model.addAttribute("studentEmail", student.getEmail());
+		model.addAttribute("studentAddress", student.getAddress());
 		return "secondForm";
 	}
 }
