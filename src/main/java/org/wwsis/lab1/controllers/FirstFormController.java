@@ -28,12 +28,14 @@ public class FirstFormController {
 
 	@PostMapping("/firstForm")
 	public String postForm(Model model, Student student) {
+		
 		if(student.getAge() < 0) {
 			model.addAttribute("formName", "Moj formularz:");
 			model.addAttribute("dateTime", "Aktualna data i godzina: " + dateFormat.format(date));
 			model.addAttribute("errorMessage", "Niepoprawna wartosc w polu wiek!");
 			return "firstForm";
 		}
+		
 		model.addAttribute("studentFirstName", student.getFirstName());
 		model.addAttribute("studentLastName", student.getLastName());
 		model.addAttribute("studentAge", student.getAge());
