@@ -48,4 +48,11 @@ public class Student {
 		this.lastName = lastName;
 	}
 	
+	public int multiply(int x, int y){
+		if(x > 99){
+			throw new IllegalArgumentException();
+		}
+		return x / y;
+	}
+	
 }
